@@ -1,7 +1,10 @@
 const myDiscriminator = ["0000", "0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "2000","1234", "1010", "2001", "1111", "5555", "2222", "4321"];
 const bot = new(require("discord.js")).Client({fetchAllMembers: true});
 
-const password = (process.env.PASSWORD);
+const password = "process.env.password";
+const token = "process.env.BOT_TOKEN";
+
+bot.login(token);
 
 function changeDiscriminator() {
   if (myDiscriminator.includes(bot.user.discriminator.toString()))
@@ -30,4 +33,3 @@ bot.once("ready", () => {
       process.exit();
   }
 });
-bot.login(process.env.BOT_TOKEN);
